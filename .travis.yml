@@ -24,8 +24,12 @@ env:
     - CI_NODE_INDEX=2
 
 addons:
-    firefox: "46.0"
     postgresql: "9.4"
+    chrome: stable
+    apt:
+      packages:
+        - openjdk-8-jre-headless
+        - chromium-chromedriver
     artifacts:
       paths:
         - $HOME/roots/behatfail
@@ -45,6 +49,7 @@ services:
 before_install:
     # Disable xdebug. We aren't generating code coverage, and it has a huge impact upon test performance.
     - phpenv config-rm xdebug.ini
+    # - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://127.0.0.1 > /dev/null 2>&1 &
 
 install:
     # Set the encrypted GITHUB_TOKEN if it's available to raise the API limit.
@@ -57,7 +62,8 @@ install:
 
 before_script:
     - psql --version
-    - psql -c 'CREATE DATABASE temp;' -U postgres
+    - google-chrome --version
+    - chromedriver --version
     - git clone https://github.com/cjamieso/moodlescripts.git;
     - export PATH="$TRAVIS_BUILD_DIR/moodlescripts:$PATH";
     - echo $PATH;
@@ -68,7 +74,7 @@ before_script:
     - install_moodle
     # Download and setup selenium.
     - "wget http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar -O selenium-server-standalone.jar"
-    - xvfb-run -a java -jar selenium-server-standalone.jar -maxSession $PARALLELRUNS -browser "browserName=firefox, maxInstances=$PARALLELRUNS" > /dev/null 2>&1 &
+    - xvfb-run -a java -jar selenium-server-standalone.jar -Dwebdriver.chrome.driver=/usr/lib/chromium-browser/chromedriver -maxSession $PARALLELRUNS -browser "browserName=chrome, maxInstances=$PARALLELRUNS" > /dev/null 2>&1 &
     - sleep 10
 
 script:
