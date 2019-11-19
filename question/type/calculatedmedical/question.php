@@ -132,7 +132,10 @@ class qtype_calculatedmedical_variable_substituter extends qtype_calculated_vari
     public function format_float($x, $length = null, $format = null) {
         if (!is_null($length) && !is_null($format)) {
             if ($format == '3') {
-                $x = sprintf('%.' . $length . 'G', $x);
+                // Round first.
+                $x = sprintf('%.' . $length . 'F', $x);
+                // Then strip trailing zeros.
+                $x = (float)$x;
                 return str_replace('.', $this->decimalpoint, $x);
             } else {
                 return parent::format_float($x, $length, $format);

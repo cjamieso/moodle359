@@ -49,6 +49,9 @@ class qtype_calculatedmedical_variable_substituter_test extends advanced_testcas
         $this->assertSame('0.7', $vs->format_float(0.7, 2, 3));
         $this->assertSame('0.7', $vs->format_float(0.7, 3, 3));
         $this->assertSame('0.667', $vs->format_float(0.666667, 3, 3));
+        $this->assertSame('11', $vs->format_float(10.99, 1, 3));
+        $this->assertSame('10.7', $vs->format_float(10.7, 3, 3));
+        $this->assertSame('100.7', $vs->format_float(100.7, 3, 3));
     }
 
 }
