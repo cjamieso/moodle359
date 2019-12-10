@@ -89,9 +89,13 @@ define(['local_d3js/d3', 'local_d3js/d3tip', 'jquery'], function(d3, d3tip) {
                 .call(axis)
                 .selectAll("text")
                     .style(styles)
-                    .attr(attributes);
+                    .attr(attributes)
+                    .attr("class", "eclass-text-fill");
+            d3.select(selector).selectAll("line").attr("class", "eclass-text-stroke");
+            d3.select(selector).selectAll("path").attr("class", "eclass-text-stroke");
             if (title.name !== '') {
                 d3.select(selector).select("." + options.cssclass).append("text")
+                    .attr("class", "eclass-text-fill")
                     .attr("transform", "translate" + title.translate)
                     .style("text-anchor", title.textanchor)
                     .text(title.name);
@@ -241,7 +245,7 @@ define(['local_d3js/d3', 'local_d3js/d3tip', 'jquery'], function(d3, d3tip) {
                     .data(data)
                     .enter()
                     .append('g')
-                        .attr('class', 'legend')
+                        .attr('class', 'legend eclass-text-fill')
                         .attr('transform', function(d, i) {
                             var index = i % LEGENDITEMSPERPAGE;
                             var horz = indent + legendRectSize;
@@ -399,7 +403,8 @@ define(['local_d3js/d3', 'local_d3js/d3tip', 'jquery'], function(d3, d3tip) {
             selection.each(function(data) {
                 d3.select(this).append("text")
                     .text(data)
-                    .attr(attributes);
+                    .attr(attributes)
+                    .attr("class", "eclass-text-fill");
             });
         }
 
@@ -1441,7 +1446,7 @@ define(['local_d3js/d3', 'local_d3js/d3tip', 'jquery'], function(d3, d3tip) {
 
                 svg.append("path")
                     .datum({endAngle: 0.33 * tau})
-                    .attr('class', 'spinner')
+                    .attr('class', 'spinner eclass-text-stroke')
                     .attr("d", arc)
                     .call(obj._spin, 750);
 

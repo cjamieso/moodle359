@@ -193,6 +193,7 @@ $string['allurls'] = 'All URLs';
 
 // Alt text for images.
 $string['addcriterionalt'] = 'Add to list';
+$string['applyfilteralt'] = 'Apply filters to generate view';
 $string['chartgridalt'] = 'Change to grid layout';
 $string['chartlistalt'] = 'Change to list layout';
 $string['closebuttonalt'] = 'Close this report';

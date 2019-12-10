@@ -46,7 +46,7 @@ Context variables required for this template:
             {{{ datefilter }}}
             <div class="dateselector" style="display: none;">
                 {{# pix }} e/insert_date, core, {{# str }} dateselectoralt, report_analytics {{/ str }} {{/ pix }}
-                <div class="ms-drop" style="display: none;">
+                <div class="ms-drop form-control" style="display: none;">
                     <ul>
                         {{# presetdates }}
                             <span value="{{{date}}}">{{text}}</span>
@@ -72,12 +72,13 @@ Context variables required for this template:
     </div>
     <div class="clear"></div>
     {{$ filter }}
-        <button class="d3button applyfilter btn" type="button">{{# str }} applyfilterbutton, report_analytics {{/ str }}</button>
+        <button class="d3button applyfilter btn btn-secondary" type="button">{{# str }} applyfilterbutton, report_analytics {{/ str }}</button>
         <div class="filterstatustext"></div>
     {{/ filter }}
     <div class="d3export"></div>
     <div id="d3chart{{time}}" class="d3chart">
         {{$ placeholder }}
+            {{# pix }} i/up, core,{{# str }} applyfilteralt, report_analytics {{/ str }}{{/ pix }}
         {{/ placeholder }}
     </div>
     {{$ footer }}

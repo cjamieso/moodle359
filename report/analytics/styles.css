@@ -1,13 +1,8 @@
 /*******************************************************************************
 * d3.js styles
 *******************************************************************************/
-body.path-report-analytics .bar {
-    fill: steelblue;
-}
-
 body.path-report-analytics .series .line {
     fill: none;
-    stroke: steelblue;
     stroke-width: 2px;
 }
 
@@ -25,14 +20,6 @@ body.path-report-analytics .piechart {
     width: 960px;
 }
 
-body.path-report-analytics .piechart .arc text {
-    fill: white;
-}
-
-body.path-report-analytics .arc path {
-    stroke: #fff;
-}
-
 body.path-report-analytics .axis text {
     font-size: 12px;
 }
@@ -40,7 +27,6 @@ body.path-report-analytics .axis text {
 body.path-report-analytics .axis path,
 body.path-report-analytics .axis line {
     fill: none;
-    stroke: #000;
     shape-rendering: crispEdges;
 }
 
@@ -48,26 +34,11 @@ body.path-report-analytics .legend text {
     font: 10px sans-serif;
 }
 
-body.path-report-analytics .tooltip {
-    background: #eee;
-    box-shadow: 0 0 5px #999999;
-    color: #333;
-    display: none;
-    font-size: 12px;
-    left: 430px;
-    padding: 10px;
-    position: absolute;
-    text-align: center;
-    top: 220px;
-    width: 80px;
-    z-index: 10;
-}
-
 body.path-report-analytics .d3-tip {
     line-height: 1;
     font-weight: bold;
     padding: 12px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(85, 89, 92, 0.8);
     color: #fff;
     border-radius: 2px;
 }
@@ -79,7 +50,7 @@ body.path-report-analytics .d3-tip:after {
     font-size: 10px;
     width: 100%;
     line-height: 1;
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(85, 89, 92, 0.8);
     content: "\25BC";
     position: absolute;
     text-align: center;
@@ -90,10 +61,6 @@ body.path-report-analytics .d3-tip.n:after {
     margin: -1px 0 0 0;
     top: 100%;
     left: 0;
-}
-
-body.path-report-analytics .spinner {
-    fill: #4D4D4D;
 }
 
 body.path-report-analytics .d3title {
@@ -122,6 +89,8 @@ body.path-report-analytics .filterheader .select {
     float: left;
     margin: 0 8px 0 0;
     padding: 0;
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
 }
 
 body.path-report-analytics .filterheader .select.single,
@@ -136,7 +105,6 @@ body.path-report-analytics .coursefiltercontainer .select.single {
 
 body.path-report-analytics .filterheader {
     display: inline-block;
-    background-color: #F5F5F5;
     border: 1px solid #E3E3E3;
     border-radius: 3px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
@@ -189,6 +157,8 @@ body.path-report-analytics .filterheader .advancedtoggle {
 body.path-report-analytics .chartheader button.ms-choice,
 body.path-report-analytics .recipientfiltercontainer button.ms-choice {
     margin: 3px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 body.path-report-analytics .chartheader button.applyfilter {
@@ -222,7 +192,7 @@ body.path-report-analytics .filterheader input.binslidervalue {
     border: 0;
     color: #f6931f;
     font-weight: bold;
-    background-color: #F5F5F5;
+    background-color: inherit;
     box-shadow: 0 0 0;
     border-radius: 0;
 }
@@ -370,7 +340,7 @@ body.path-report-analytics .layoutmenu i {
 }
 
 body.path-report-analytics .layoutmenu {
-    border: 1px solid #111111;
+    border: 1px solid #666;
     border-radius: 3px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
     float: right;
@@ -435,6 +405,12 @@ body.path-report-analytics .filterheader i.fa-question-circle,
 body.path-report-analytics div.addcriterion i {
     font-size: 16px;
     margin: 7px 6px 7px 0;
+}
+
+body.path-report-analytics .d3chart i.fa-arrow-up {
+    font-size: 200px;
+    width: 500px;
+    height: 200px;
 }
 
 body.path-report-analytics div.addcriterion i {
@@ -559,18 +535,6 @@ body.path-report-analytics .scheduled-save {
     padding: 6px;
     font-size: 14px;
     line-height: 20px;
-    color: #695814;
-    text-shadow: none;
-    text-transform: uppercase;
-    background-color: #ffe23b;
-    background-image: none;
-    border: 1px solid #e0c325;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none
 }
 
 body.path-report-analytics .d3plus,

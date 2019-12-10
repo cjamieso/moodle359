@@ -37,7 +37,7 @@ Context variables required for this template:
 {{/ label }}
 
 {{$ altbutton }}
-    <button type="button" class="filterbutton btn" value="action">
+    <button type="button" class="filterbutton btn btn-secondary" value="action">
         {{# str }} actions {{/ str }}
     </button>
 {{/ altbutton }}
@@ -54,7 +54,7 @@ Context variables required for this template:
         {{# operators }}
             {{> report_analytics/selectfilter }}
         {{/ operators }}
-        <input type="text" class="valuefilter" name="actionvalue" />
+        <input type="text" class="valuefilter form-control" name="actionvalue" />
     </div>
 {{/ altselect}}
 
