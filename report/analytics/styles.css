@@ -93,6 +93,16 @@ body.path-report-analytics .filterheader .select {
     -moz-appearance: menulist;
 }
 
+body.path-report-analytics .filterheader .select[multiple="multiple"],
+body.path-report-analytics .filterheader .select.single,
+body.path-report-analytics .criteria > ul > li.custom-select {
+    background-image: none;
+}
+
+body.path-report-analytics .filterheader .select.ms-parent {
+    border: 0px solid #fff;
+}
+
 body.path-report-analytics .filterheader .select.single,
 body.path-report-analytics .coursefiltercontainer .select.single {
     float: left;
@@ -262,8 +272,6 @@ body.path-report-analytics .criteria {
 }
 
 body.path-report-analytics .criteria > ul > li {
-    background: none repeat scroll 0 0 #dee7f8;
-    border: 1px solid #cad8f3;
     padding: 2px 3px 2px 5px;
     margin: 4px 5px 4px 0;
     float: left;

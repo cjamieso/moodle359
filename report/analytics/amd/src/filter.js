@@ -764,7 +764,7 @@ define(['jquery', 'jqueryui', 'report_analytics/jquery.multiple.select', 'report
     CriteriaFilter.prototype._addCriterionLI = function(container, type, operand, operator, value) {
 
         container.append(
-            $('<li>').text(operand.text + ' ' + operator.text + ' ' + value)
+            $('<li class="custom-select">').text(operand.text + ' ' + operator.text + ' ' + value)
             .append($('<img>').attr('src', M.util.image_url('t/delete'))
                 .addClass('removecriterion')
                 .attr('alt', M.util.get_string('removecriterionalt', 'report_analytics'))
